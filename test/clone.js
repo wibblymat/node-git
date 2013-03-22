@@ -12,6 +12,8 @@ describe("clone", function () {
 	var failPromise = git.clone(),
 		root = process.cwd();
 
+	console.log("WORKING DIRECTORY: " + root);
+
 	beforeEach(function () {
 		process.chdir(root);
 	});
