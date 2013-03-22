@@ -74,10 +74,10 @@ describe("checkout", function () {
 				})
 				.then(function () {
 					assert.equal(ref + "\n", fs.readFileSync(head, "utf8"));
-				})
+					done();
+				}, done)
 				.finally(function () {
 					rimraf.sync(tmpDir);
-					done();
 				})
 				.done();
 		});
