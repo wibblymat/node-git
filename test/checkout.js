@@ -1,4 +1,4 @@
-/* global describe, it *///, before, after, beforeEach, afterEach */
+/* global describe, it, beforeEach *///, before, after, afterEach */
 "use strict";
 
 var git    = require("../lib/git"),
@@ -9,7 +9,12 @@ var git    = require("../lib/git"),
 	assert = require("chai").assert;
 
 describe("checkout", function () {
-	var failPromise = git.checkout();
+	var failPromise = git.checkout(),
+		root = process.cwd();
+
+	beforeEach(function () {
+		process.chdir(root);
+	});
 
 	it("is a function", function () {
 		assert.isFunction(git.checkout);

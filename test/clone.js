@@ -1,4 +1,4 @@
-/* global describe, it *///, before, after, beforeEach, afterEach */
+/* global describe, it, beforeEach *///, before, after, afterEach */
 "use strict";
 
 var git    = require("../lib/git"),
@@ -9,7 +9,13 @@ var git    = require("../lib/git"),
 	assert = require("chai").assert;
 
 describe("clone", function () {
-	var failPromise = git.clone();
+	var failPromise = git.clone(),
+		root = process.cwd();
+
+	beforeEach(function () {
+		process.chdir(root);
+	});
+
 
 	it("is a function", function () {
 		assert.isFunction(git.clone);
@@ -37,9 +43,9 @@ describe("clone", function () {
 				throw error;
 			}
 
-			git.clone("git@github.com:wibblymat/node-git.git", tmpDir)
+			git.clone("git@github.com:components/rsvp.js.git", tmpDir)
 				.then(function () {
-					assert.ok(fs.existsSync(path.resolve(tmpDir, "README.md")));
+					assert.ok(fs.existsSync(path.resolve(tmpDir, "rsvp.min.js")));
 				})
 				.finally(function () {
 					rimraf.sync(tmpDir);

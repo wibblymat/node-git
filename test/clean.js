@@ -1,4 +1,4 @@
-/* global describe, it, before, after *///, beforeEach, afterEach */
+/* global describe, it, before, after, beforeEach *///, afterEach */
 "use strict";
 
 var git    = require("../lib/git"),
@@ -9,7 +9,13 @@ var git    = require("../lib/git"),
 	assert = require("chai").assert;
 
 describe("clean", function () {
-	var repo, newFile, newDir;
+	var repo, newFile, newDir,
+		root = process.cwd();
+
+	beforeEach(function () {
+		process.chdir(root);
+	});
+
 
 	before(function (done) {
 		tmp.dir(function (error, tmpDir) {
