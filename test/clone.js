@@ -45,7 +45,7 @@ describe("clone", function () {
 				throw error;
 			}
 
-			git.clone("git@github.com:components/rsvp.js.git", tmpDir)
+			git.clone("git://github.com/components/rsvp.js.git", tmpDir)
 				.then(function () {
 					assert.ok(fs.existsSync(path.resolve(tmpDir, "rsvp.min.js")));
 				})
@@ -82,7 +82,7 @@ describe("clone", function () {
 				throw error;
 			}
 
-			git.clone("git@github.com:components/jquery.git", tmpDir, {depth: 1})
+			git.clone("git://github.com/components/jquery.git", tmpDir, {depth: 1})
 				.then(function () {
 					assert.ok(fs.existsSync(path.resolve(tmpDir, ".git/shallow")));
 				})
