@@ -21,6 +21,12 @@
     "mocha": "~1.8.2",
     "grunt-contrib-watch": "~0.3.1",
     "grunt-contrib-jshint": "~0.3.0",
-    "grunt-simple-mocha": "~0.3.2"
+    "grunt-simple-mocha": "~0.3.2",
+    "chai": "~1.5.0",
+    "tmp": "0.0.16",
+    "rimraf": "~2.1.4"
+  },
+  "dependencies": {
+    "q": "~0.9.2"
   }
 }

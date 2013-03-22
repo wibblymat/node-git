@@ -22,15 +22,15 @@ module.exports = function (grunt) {
 				ui: "bdd",
 				reporter: "spec"
 			},
-			all: { src: "test/**/*.js" }
+			all: { src: "test/*.js" }
 		}
 
 	});
 
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks("grunt-simple-mocha");
 
 	grunt.registerTask("test", ["jshint", "simplemocha"]);
 	grunt.registerTask("default", ["jshint"]);
-	grunt.loadNpmTasks("grunt-simple-mocha");
 };
