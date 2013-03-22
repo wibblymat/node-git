@@ -55,7 +55,7 @@ describe("clone", function () {
 				throw error;
 			}
 
-			git.clone("test/fixtures/small-repo", tmpDir)
+			git.clone("test/fixtures/small-repo.git", tmpDir)
 				.then(function () {
 					assert.ok(fs.existsSync(path.resolve(tmpDir, "README")));
 				})

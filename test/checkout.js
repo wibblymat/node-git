@@ -62,7 +62,7 @@ describe("checkout", function () {
 			var head = path.resolve(tmpDir, ".git/HEAD");
 			var ref = "bcc8a837055fe720579628d758b7034d6b520f2e";
 
-			git.clone("test/fixtures/jquery", tmpDir)
+			git.clone("test/fixtures/jquery.git", tmpDir)
 				.then(function () {
 					assert.equal("ref: refs/heads/master\n", fs.readFileSync(head, "utf8"));
 					return git.checkout(tmpDir, "1.0");
@@ -84,7 +84,7 @@ describe("checkout", function () {
 				throw error;
 			}
 
-			git.clone("test/fixtures/jquery", tmpDir)
+			git.clone("test/fixtures/jquery.git", tmpDir)
 				.then(function () {
 					fs.writeFileSync(path.resolve(tmpDir, "README.md"), "changed");
 				})
@@ -110,7 +110,7 @@ describe("checkout", function () {
 				throw error;
 			}
 
-			git.clone("test/fixtures/jquery", tmpDir)
+			git.clone("test/fixtures/jquery.git", tmpDir)
 				.then(function () {
 					fs.writeFileSync(path.resolve(tmpDir, "README.md"), "changed");
 				})

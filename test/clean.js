@@ -19,7 +19,7 @@ describe("clean", function () {
 
 			repo = tmpDir;
 
-			git.clone("test/fixtures/small-repo", tmpDir)
+			git.clone("test/fixtures/small-repo.git", tmpDir)
 				.then(function () {
 					newFile = path.resolve(repo, "new-file");
 					newDir = path.resolve(repo, "new-dir");
